@@ -144,7 +144,11 @@ export default function Home() {
         });
         return;
       }
-      navigator.clipboard.writeText(ref.current?.value);
+      try {
+        navigator.clipboard.writeText(para);
+      } catch (error) {
+        
+      }
       toast({
         title: "Text copied...",
       });
